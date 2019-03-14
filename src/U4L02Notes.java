@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -11,11 +12,11 @@ import javax.swing.UIManager;
 
 public class U4L02Notes extends JFrame {
 	
-	public static final String FILE_NAME = "/zoe.jpg";
+	public static final String FILE_NAME = "/Clemy.jpg";
 	
 	public U4L02Notes(){
 		initGUI();
-		setTitle("Examples");
+		setTitle("Meme");
 		setResizable(true);
 		pack();
 		setLocationRelativeTo(null);
@@ -27,13 +28,17 @@ public class U4L02Notes extends JFrame {
 		//title Panel
 		JPanel titlePanel = new JPanel();
 		titlePanel.setBackground(Color.BLACK);
-		JLabel titleLabel = new JLabel("Examples");
+		JLabel titleLabel = new JLabel("girls taking Valentine's Day selfies with the gift their boo got them");
 		titleLabel.setForeground(Color.WHITE);
 		titlePanel.add(titleLabel);
 		add(titlePanel, BorderLayout.PAGE_START);
-
+		Font titleFont = new Font("Fish&Chips", Font.BOLD, 16);
+		titleLabel.setFont(titleFont);
+		ImagePanel imgPanel = new ImagePanel(FILE_NAME);
+		add(imgPanel, BorderLayout.CENTER);
 
 	}
+	
 	
 	
 	public static void main(String[] args) {
