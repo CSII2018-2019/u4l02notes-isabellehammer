@@ -16,7 +16,7 @@ public class U4L02Notes extends JFrame {
 	
 	public U4L02Notes(){
 		initGUI();
-		setTitle("Meme");
+		setTitle("Picture (Meme)");
 		setResizable(true);
 		pack();
 		setLocationRelativeTo(null);
@@ -28,14 +28,33 @@ public class U4L02Notes extends JFrame {
 		//title Panel
 		JPanel titlePanel = new JPanel();
 		titlePanel.setBackground(Color.BLACK);
-		JLabel titleLabel = new JLabel("girls taking Valentine's Day selfies with the gift their boo got them");
+		JLabel titleLabel = new JLabel("girls taking Valentine's Day pictures with the gift their boo got them");
 		titleLabel.setForeground(Color.WHITE);
 		titlePanel.add(titleLabel);
 		add(titlePanel, BorderLayout.PAGE_START);
 		Font titleFont = new Font("Fish&Chips", Font.BOLD, 16);
 		titleLabel.setFont(titleFont);
 		ImagePanel imgPanel = new ImagePanel(FILE_NAME);
-		add(imgPanel, BorderLayout.CENTER);
+		add(imgPanel, BorderLayout.LINE_START);
+		
+		//grayscale image panel
+		//ImagePanel grayImgPanel = new ImagePanel(FILE_NAME);
+		//grayImgPanel.convertToGrayscale();
+		//add(grayImgPanel, BorderLayout.LINE_END);
+		
+		/*ImagePanel rgbRedPanel = new ImagePanel(FILE_NAME);
+		rgbRedPanel.rgbRedEffect();
+		add(rgbRedPanel, BorderLayout.LINE_END);
+		*/
+		
+		/*ImagePanel rgbGreenPanel = new ImagePanel(FILE_NAME);
+		rgbGreenPanel.rgbGreenEffect();
+		add(rgbGreenPanel, BorderLayout.LINE_END);*/
+		
+		
+		ImagePanel rgbBluePanel = new ImagePanel(FILE_NAME);
+		rgbBluePanel.rgbBlueEffect();
+		add(rgbBluePanel, BorderLayout.LINE_END);
 
 	}
 	
