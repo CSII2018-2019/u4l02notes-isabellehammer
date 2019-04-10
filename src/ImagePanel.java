@@ -59,6 +59,62 @@ public class ImagePanel extends JPanel {
 		}
 	}
 	
+	public void underTheSea() {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				//get value for 1 pixel
+				int p = image.getRGB(x, y);
+				
+				int a = (p>>24) & 0xff;
+				int r = (p>>0) & 0xff;
+				int g = (p>>8) & 0xff;
+				int b = (p>>16) & 0xff;
+				
+				//reset our pixel
+				p = (a<<24) | (r<<16) | (g<<8) | (b<<0);
+				image.setRGB(x, y, p);
+			}
+		}
+	}
+	
+	public void stPatty() {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				//get value for 1 pixel
+				int p = image.getRGB(x, y);
+				
+				int a = (p>>24) & 0xff;
+				int r = (p>>8) & 0xff;
+				int g = (p>>16) & 0xff;
+				int b = (p>>0) & 0xff;
+				
+				//reset our pixel
+				p = (a<<24) | (r<<16) | (g<<8) | (b<<0);
+				image.setRGB(x, y, p);
+			}
+		}
+	}
+	
+	public void vDay() {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				//get value for 1 pixel
+				int p = image.getRGB(x, y);
+				
+				int a = (p>>24) & 0xff;
+				int r = (p>>16) & 0xff;
+				int g = (p>>0) & 0xff;
+				int b = (p>>8) & 0xff;
+				
+				//reset our pixel
+				p = (a<<24) | (r<<16) | (g<<8) | (b<<0);
+				image.setRGB(x, y, p);
+			}
+		}
+	}
+	
+	
+	
 	public void rgbRedEffect() {
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
@@ -119,6 +175,26 @@ public class ImagePanel extends JPanel {
 				
 			}
 	}
+	
+	public void grapeTint() {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				//get value for 1 pixel
+				int p = image.getRGB(x, y);
+				
+				int a = (p>>24) & 0xff;
+				int r = (p>>8) & 0xff;
+				int g = (p>>0) & 0xff;
+				int b = (p>>16) & 0xff;
+				
+				//reset our pixel
+				p = (a<<24) | (r<<16) | (g<<8) | (b<<0);
+				image.setRGB(x, y, p);
+			}
+		}
+	}
+	
+	
 	
 	public void paintComponent(Graphics g) {
 		g.drawImage(image, 0, 0, null);

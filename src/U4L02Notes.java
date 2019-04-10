@@ -38,23 +38,43 @@ public class U4L02Notes extends JFrame {
 		add(imgPanel, BorderLayout.LINE_START);
 		
 		//grayscale image panel
-		//ImagePanel grayImgPanel = new ImagePanel(FILE_NAME);
-		//grayImgPanel.convertToGrayscale();
-		//add(grayImgPanel, BorderLayout.LINE_END);
+		/*ImagePanel grayImgPanel = new ImagePanel(FILE_NAME);
+		grayImgPanel.convertToGrayscale();
+		add(grayImgPanel, BorderLayout.LINE_END);*/
 		
 		/*ImagePanel rgbRedPanel = new ImagePanel(FILE_NAME);
 		rgbRedPanel.rgbRedEffect();
-		add(rgbRedPanel, BorderLayout.LINE_END);
-		*/
+		add(rgbRedPanel, BorderLayout.LINE_END);*/
+		
 		
 		/*ImagePanel rgbGreenPanel = new ImagePanel(FILE_NAME);
 		rgbGreenPanel.rgbGreenEffect();
 		add(rgbGreenPanel, BorderLayout.LINE_END);*/
 		
 		
-		ImagePanel rgbBluePanel = new ImagePanel(FILE_NAME);
+		/*ImagePanel rgbBluePanel = new ImagePanel(FILE_NAME);
 		rgbBluePanel.rgbBlueEffect();
-		add(rgbBluePanel, BorderLayout.LINE_END);
+		add(rgbBluePanel, BorderLayout.LINE_END);*/
+		
+		
+		 /*ImagePanel underTheSeaPanel = new ImagePanel(FILE_NAME);
+		 underTheSeaPanel.underTheSea();
+		 add(underTheSeaPanel, BorderLayout.LINE_END);*/
+		 
+		 /*ImagePanel stPattyPanel = new ImagePanel(FILE_NAME);
+		 stPattyPanel.stPatty();
+		 add(stPattyPanel, BorderLayout.LINE_END);*/
+		
+		/*ImagePanel vDayPanel = new ImagePanel(FILE_NAME);
+		vDayPanel.vDay();
+		add(vDayPanel, BorderLayout.LINE_END);*/
+		
+		ImagePanel grapeTintPanel = new ImagePanel(FILE_NAME);
+		grapeTintPanel.grapeTint();
+		add(grapeTintPanel, BorderLayout.LINE_END);
+		
+		
+		 
 
 	}
 	
