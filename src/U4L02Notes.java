@@ -1,9 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,7 +16,14 @@ import javax.swing.UIManager;
 
 public class U4L02Notes extends JFrame {
 	
+	//ImagePanel rgbBluePanel = new ImagePanel(FILE_NAME);
+	//ImagePanel grapeTintPanel = new ImagePanel(FILE_NAME);
+	//ImagePanel antoniaPanel = new ImagePanel(FILE_NAME);
+	//ImagePanel resetPanel = new ImagePanel(FILE_NAME);
+	ImagePanel changedPanel = new ImagePanel(FILE_NAME);
+	
 	public static final String FILE_NAME = "/Clemy.jpg";
+	
 	
 	public U4L02Notes(){
 		initGUI();
@@ -26,16 +37,75 @@ public class U4L02Notes extends JFrame {
 	
 	public void initGUI(){
 		//title Panel
-		JPanel titlePanel = new JPanel();
-		titlePanel.setBackground(Color.BLACK);
-		JLabel titleLabel = new JLabel("girls taking Valentine's Day pictures with the gift their boo got them");
-		titleLabel.setForeground(Color.WHITE);
-		titlePanel.add(titleLabel);
-		add(titlePanel, BorderLayout.PAGE_START);
-		Font titleFont = new Font("Fish&Chips", Font.BOLD, 16);
-		titleLabel.setFont(titleFont);
-		ImagePanel imgPanel = new ImagePanel(FILE_NAME);
-		add(imgPanel, BorderLayout.LINE_START);
+		
+		
+		//image panel
+		ImagePanel original = new ImagePanel(FILE_NAME);
+		add(original, BorderLayout.LINE_START);
+		
+		
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setBackground(new Color(241, 169, 242));
+		add(buttonPanel, BorderLayout.PAGE_END);
+		
+		add(changedPanel, BorderLayout.LINE_END);
+		
+		
+		JButton blueButton = new JButton ("Blue Effect");
+		blueButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				callBlue();
+				//System.out.println("blue button works");
+			}
+		});
+		buttonPanel.add(blueButton);
+		//add(rgbBluePanel, BorderLayout.LINE_END);
+		
+
+		
+		
+		
+		JButton grapeButton = new JButton ("Grape Tint");
+		grapeButton.setBackground(Color.WHITE);
+		grapeButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				callGrape();
+				//System.out.println("grape button works");
+			}
+		});
+		buttonPanel.add(grapeButton);
+		//add(grapeTintPanel, BorderLayout.LINE_END);
+		
+	
+		//add(antoniaPanel, BorderLayout.LINE_END);
+		
+		JButton antoniaButton = new JButton ("Antonia's Filter");
+		antoniaButton.setBackground(Color.WHITE);
+		antoniaButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				callAntonia();
+				//System.out.println("antonia button works");
+			}
+		});
+		buttonPanel.add(antoniaButton);
+		
+		
+		//add(resetPanel, BorderLayout.LINE_END);
+		
+		JButton resetButton = new JButton ("reset");
+		resetButton.setBackground(Color.WHITE);
+		resetButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				callReset();
+				//System.out.println("reset button works");
+			}
+		});
+		buttonPanel.add(resetButton);
+		
 		
 		//grayscale image panel
 		/*ImagePanel grayImgPanel = new ImagePanel(FILE_NAME);
@@ -51,31 +121,29 @@ public class U4L02Notes extends JFrame {
 		rgbGreenPanel.rgbGreenEffect();
 		add(rgbGreenPanel, BorderLayout.LINE_END);*/
 		
-		
-		/*ImagePanel rgbBluePanel = new ImagePanel(FILE_NAME);
-		rgbBluePanel.rgbBlueEffect();
-		add(rgbBluePanel, BorderLayout.LINE_END);*/
-		
-		
-		 /*ImagePanel underTheSeaPanel = new ImagePanel(FILE_NAME);
-		 underTheSeaPanel.underTheSea();
-		 add(underTheSeaPanel, BorderLayout.LINE_END);*/
-		 
-		 /*ImagePanel stPattyPanel = new ImagePanel(FILE_NAME);
-		 stPattyPanel.stPatty();
-		 add(stPattyPanel, BorderLayout.LINE_END);*/
-		
-		/*ImagePanel vDayPanel = new ImagePanel(FILE_NAME);
-		vDayPanel.vDay();
-		add(vDayPanel, BorderLayout.LINE_END);*/
-		
-		ImagePanel grapeTintPanel = new ImagePanel(FILE_NAME);
-		grapeTintPanel.grapeTint();
-		add(grapeTintPanel, BorderLayout.LINE_END);
-		
-		
-		 
 
+	}
+	
+	
+	
+	
+	
+	public void callBlue() {
+		//System.out.println("call blue worked");
+		changedPanel.rgbBlueEffect();
+		
+	}
+	
+	public void callGrape() {
+		changedPanel.grapeTint();
+	}
+	
+	public void callAntonia() {
+		changedPanel.antoniaEffect();
+	}
+	
+	public void callReset() {
+		changedPanel.reset();
 	}
 	
 	
